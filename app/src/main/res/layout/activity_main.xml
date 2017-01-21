@@ -1,103 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="2"
     android:id="@+id/mainlayout">
 
     <fragment
         class="com.here.android.mpa.ar.CompositeFragment"
         android:id="@+id/compositefragment"
-        android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="stopLiveSight"
+        fab:fabSize="mini"
+        fab:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/floatingActionButton2" />
 
-        <Button
-            android:id="@+id/toggleObject"
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_addButtonColorNormal="@color/white"
+        fab:fab_addButtonColorPressed="@color/white_pressed"
+        fab:fab_addButtonSize="normal"
+        fab:fab_addButtonPlusIconColor="@color/half_black"
+        fab:fab_expandDirection="up"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/metro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="toggleObject"
-            android:text="@string/label_button_addobject" />
+            android:onClick="metroStartLiveSight"
+            fab:fab_addButtonSize="normal"
+            fab:fab_icon="@drawable/metro"/>
 
-        <Button
-            android:id="@+id/stopLiveSight"
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/police"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="stopLiveSight"
-            android:text="@string/label_button_stoplivesight"
-            android:visibility="gone" />
+            android:onClick="policeStartLiveSight"
+            fab:fab_addButtonSize="normal"
+            fab:fab_icon="@drawable/police"/>
 
-        <Button
-            android:id="@+id/startLiveSight"
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/monument"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="startLiveSight"
-            android:text="@string/label_button_startlivesight" />
-    </LinearLayout>
+            android:onClick="monumentStartLiveSight"
+            fab:fab_addButtonSize="normal"
+            fab:fab_icon="@drawable/monument"/>
 
-            <LinearLayout
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/toilet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:onClick="toiletStartLiveSight"
+            fab:fab_addButtonSize="normal"
+            fab:fab_icon="@drawable/toilet"/>
 
-
-            <ImageView
-                android:text="Button"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:id="@+id/button5"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/metro"
-                android:layout_marginRight="15dp"
-                />
-
-            <ImageView
-                android:text="Button"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:id="@+id/button3"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/police"
-                android:layout_marginRight="15dp"
-                />
-
-            <ImageView
-                android:text="Button"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:id="@+id/button6"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/monument"
-                android:layout_marginRight="15dp" />
-
-             <ImageView
-                android:text="Button"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:id="@+id/button8"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/ambulance"
-                android:layout_marginLeft="15dp"/>
-                
-            <ImageView
-                android:text="Button"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:id="@+id/button4"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/toilet"
-                android:layout_marginLeft="15dp"/>
-        </LinearLayout>
-</LinearLayout>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ambulance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ambulanceStartLiveSight"
+            fab:fab_addButtonSize="normal"
+            fab:fab_icon="@drawable/ambulance"/>
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+</RelativeLayout>

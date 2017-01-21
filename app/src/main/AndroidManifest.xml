@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kludge.com.livesight">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -22,14 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name="com.here.android.mpa.service.MapService"
+            android:exported="true"
             android:label="HereMapService"
-            android:process="global.Here.Map.Service.v2"
-            android:exported="true" >
-                <intent-filter>
-                    <action android:name="com.here.android.mpa.service.MapService" />
-                </intent-filter>
+            android:process="global.Here.Map.Service.v2">
+            <intent-filter>
+                <action android:name="com.here.android.mpa.service.MapService" />
+            </intent-filter>
         </service>
 
         <meta-data
@@ -41,5 +42,7 @@
         <meta-data
             android:name="com.here.android.maps.license.key"
             android:value="gw276zlSMIb4Iia8hpEAUvkpuwcQRmOVQbQ5snHE+HVaZqK/+jxSq8IG1p1U/bhm6zwfWRUBWmrbclxZqDVKOD4rC+8tsNeh8f/ZPt7G6pjiKSlJvDNGirO2+yIyxPmPub9GPN+OP1F30WCZJoMA5Ig2NP4IRBaUGuZ1dpWNSAj1Af/HQOfkk72vBIAca1sx+rXGk9a3ndMH0vDVGqMxSG/wApLVfV4j7OWn7rYauahvNTYen202JV1y9JEi36jvnTu9PFidGGdM62oBlzAl4ET6iXDzV390vw4Z4GY7nvaLSxOVJjnLjpZ+09ilpcMEzqoxRMPXQxucqaEy28hPvMhcW9f5K6TnXUi4iqZ1jgatdBpvU9ZF9XuvHP3abuCfgcqfCT/VeuY73vMbsHJuGfFzdKrhSWbX3Y8qmw3kht3LlwAiKHgtqLOI1PxFC1aASXhcpU4oJSXwP4lJdvyh9KcgEv/KA4ZnvrKSPsLpduC9KSUdzs0b1cbNJCXOdlrqlkeiOAfOsCoNpCySra2Y9OWE/QPn0u/MuBAJuMF/e9NZbiX9nGaA1qc4cJPlhXwAxPZrTe+9lwLauFH6rZ59Hda3amUMQCCkAwZQUmlEcD+wHL0o3XhvNpdwvEZcI6joF+Ip0BhNlBEVjM0DCfIXms3Bqn7T5iyefegMjLQTej0=" />
+
     </application>
+
 </manifest>
