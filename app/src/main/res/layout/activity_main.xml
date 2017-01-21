@@ -14,7 +14,6 @@
         android:layout_height="match_parent"/>
 
     <LinearLayout
-        android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -42,54 +41,63 @@
             android:text="@string/label_button_startlivesight" />
     </LinearLayout>
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <LinearLayout
+            <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:layout_gravity="center">
 
-            <Button
+
+            <ImageView
                 android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/button5"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/metro"
+                android:layout_marginRight="15dp"
+                />
 
-            <Button
+            <ImageView
                 android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/button3"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/police"
+                android:layout_marginRight="15dp"
+                />
 
-            <Button
+            <ImageView
                 android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:id="@+id/button6"
-                android:layout_weight="1" />
-            <Button
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/monument"
+                android:layout_marginRight="15dp" />
+
+             <ImageView
                 android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button7"
-                android:layout_weight="1" />
-            <Button
-                android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/button8"
-                android:layout_weight="1" />
-            <Button
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/ambulance"
+                android:layout_marginLeft="15dp"/>
+                
+            <ImageView
                 android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/button4"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/toilet"
+                android:layout_marginLeft="15dp"/>
         </LinearLayout>
-    </HorizontalScrollView>
 </LinearLayout>
