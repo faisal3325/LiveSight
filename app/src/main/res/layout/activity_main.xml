@@ -1,49 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainlayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        tools:context=".MainActivity" />
-
-    <!-- Map Fragment embedded with the map object -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2"
+    android:id="@+id/mainlayout">
 
     <fragment
         class="com.here.android.mpa.ar.CompositeFragment"
         android:id="@+id/compositefragment"
+        android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    <Button
-        android:id="@+id/startLiveSight"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/toggleObject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toggleObject"
+            android:text="@string/label_button_addobject" />
+
+        <Button
+            android:id="@+id/stopLiveSight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopLiveSight"
+            android:text="@string/label_button_stoplivesight"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/startLiveSight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startLiveSight"
+            android:text="@string/label_button_startlivesight" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:onClick="startLiveSight"
-        android:text="@string/label_button_startlivesight" />
-    <Button
-        android:id="@+id/stopLiveSight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:onClick="stopLiveSight"
-        android:text="@string/label_button_stoplivesight"
-        android:visibility="gone" />
-    <Button
-        android:id="@+id/toggleObject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:onClick="toggleObject"
-        android:text="@string/label_button_addobject" />
-</RelativeLayout>
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button5"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button3"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button6"
+                android:layout_weight="1" />
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button7"
+                android:layout_weight="1" />
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button8"
+                android:layout_weight="1" />
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button4"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>
