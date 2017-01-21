@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LiveSight</string>
+    <string name="label_button_addobject">Add</string>
+    <string name="label_button_stoplivesight">Stop</string>
+    <string name="label_button_startlivesight">Start</string>
+    <string name="hello_world">Hello</string>
+</resources>
