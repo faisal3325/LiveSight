@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.PointF;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -354,6 +355,17 @@ public class MainActivity extends Activity {
                     //object.setInfoMaxWidth(5);
                     /*TextView tv = new TextView(this);
                     tv.setText(namePlace.get(i));*/
+
+                    Location loc1 = new Location("");
+                    loc1.setLatitude(latit.get(i));
+                    loc1.setLongitude(lngit.get(i));
+
+                    Location loc2 = new Location("");
+                    loc2.setLatitude(latiUser);
+                    loc2.setLongitude(lngiUser);
+
+                    float distanceInMeters = loc1.distanceTo(loc2);
+
                     LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     View v = inflater.inflate(R.layout.info, null);
                     //LinearLayout lv = (LinearLayout) v.findViewById(R.id.lv);
@@ -361,7 +373,7 @@ public class MainActivity extends Activity {
                     tv1.setText(namePlace.get(i));
 
                     TextView tv2 = (TextView) v.findViewById(R.id.textView2);
-                    tv2.setText(namePlace.get(i));
+                    tv2.setText("" + String.valueOf(distanceInMeters) + "m");
 
                     object.setIcon(ARObject.IconType.INFO, v);
 
